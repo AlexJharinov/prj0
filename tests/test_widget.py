@@ -2,6 +2,14 @@ import pytest
 
 from src.widget import get_date, mask_account_card
 
+@pytest.fixture()
+def n():
+    return "Visa Platinum 7000792289606362"
+
+@pytest.fixture()
+def date_f():
+    return "2018-07-11T02:26:19.671407"
+
 
 @pytest.mark.parametrize(
     "n, expected_result",
