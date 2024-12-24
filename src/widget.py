@@ -6,7 +6,7 @@ def mask_account_card(card_inf: str) -> str:
     """Функция возвращает строку с замаскированным номером"""
     if "Счет" in card_inf:  # Проверка по типу карта/счет
         return card_inf.replace(
-            card_inf[-20:], get_mask_account(card_inf[-16:])
+            card_inf[-20:], get_mask_account(card_inf[-20:])
         )  # Возвращает счет с подменой последних 16 значений
     else:
         return card_inf.replace(
