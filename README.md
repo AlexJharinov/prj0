@@ -19,6 +19,8 @@ poetry instal
 
 - Тестирование проекта осуществляется с помощью pytest
 - HTML файл "index.html" с отчетом находится в папке "htmlcov"
+- Реализованы функции-генераторы transaction_descriptions,
+- card_number_generator,filter_by_currency и тесты к ним.
 
 ## Команда проекта 
 
