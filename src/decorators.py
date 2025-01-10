@@ -13,16 +13,16 @@ def log(filename=None):
                 func_call = func(*args, **kwargs)
                 if filename:
                     with open(filename, "a") as file:
-                        file.write(f"{wraper.__name__} is working. Result: {func_call}\n")
+                        file.write(f"{wraper.__name__} ок. Result: {func_call}\n")
                 else:
-                    print(f"{wraper.__name__} is working. Result: {func_call}")
+                    print(f"{wraper.__name__} ок. Result: {func_call}")
             except Exception as e:
                 func_call = None
                 if filename:
                     with open(filename, "a") as file:
-                        file.write(f'{wraper.__name__} have "{e}" with arguments: {args}, {kwargs}\n')
+                        file.write(f'{wraper.__name__} error "{e}" with arguments: {args}, {kwargs}\n')
                 else:
-                    print(f'{wraper.__name__} have "{e}" with arguments: {args}, {kwargs}')
+                    print(f'{wraper.__name__} error "{e}" with arguments: {args}, {kwargs}')
             return func_call
 
         return wraper
