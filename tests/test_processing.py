@@ -2,6 +2,7 @@ import pytest
 
 from src.processing import filter_by_state, sort_by_date
 
+
 @pytest.fixture
 def data_():
     return [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512365'},

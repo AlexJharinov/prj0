@@ -2,6 +2,7 @@ import pytest
 
 from src.widget import get_date, mask_account_card
 
+
 @pytest.fixture()
 def n():
     return "Visa Platinum 7000792289606362"
