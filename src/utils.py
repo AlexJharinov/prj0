@@ -1,9 +1,6 @@
-import json
-import os
-from http.client import responses
 
-import requests
-from dotenv import load_dotenv
+import json
+#from dotenv import load_dotenv
 
 
 def json_read(file_):
@@ -21,7 +18,7 @@ def json_read(file_):
 
 
 
-def conversion_value(transaction):
+def conversion_values(transaction):
     """
     Принмает транзакцию, возвращает ее сумму
     """
@@ -29,22 +26,7 @@ def conversion_value(transaction):
         return transaction['operationAmount']['amount']
 
     elif transaction['operationAmount']['currency']['code'] != 'RUB':
-        conv_currency = convert_amount(transaction['operationAmount']['amount'], transaction['operationAmount']['currency']['code'])
+        conv_currency = conversion_values(transaction['operationAmount']['amount'], transaction['operationAmount']['currency']['code'])
 
         return conv_currency
 
-def convert_amount(amount, currency):
-    """
-    Принимает сумму и валюту, возвращает сумму в Руб
-    """
-
-    load_dotenv()
-
-    api_key = os.getenv("API_KEY")
-    headdiers = {"api_key": api_key}
-
-    payload = {}
-    url =
-    response = requests.request("GET", url, headers=headers, data=payload)
-    result = response.json()["result"]
-    return result
