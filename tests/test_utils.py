@@ -17,6 +17,7 @@ def test_error_json_read():
 
 
 @patch('requests.request')
+
 def test_conversion_values(mock_get):
     mock_get.return_value.json.return_value = {
         "query": {"amount": 100, "from": "USD", "to": "RUB"},

@@ -3,7 +3,7 @@ import requests
 #from dotenv import load_dotenv
 
 
-def convert_amount(amount, currency):
+def conversion_values(amount, currency):
     """
     Принимает сумму и валюту, возвращает сумму в Руб
     """
