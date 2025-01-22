@@ -26,7 +26,9 @@ def conversion_values(transaction):
         return transaction['operationAmount']['amount']
 
     elif transaction['operationAmount']['currency']['code'] != 'RUB':
-        conv_currency = conversion_values(transaction['operationAmount']['amount'], transaction['operationAmount']['currency']['code'])
+        conv_currency = conversion_values(
+            transaction['operationAmount']['amount'], transaction['operationAmount']['currency']['code']
+        )
 
         return conv_currency
 

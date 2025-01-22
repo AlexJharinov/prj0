@@ -1,6 +1,6 @@
 import os
 import requests
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 
 def conversion_values(amount, currency):
@@ -8,7 +8,7 @@ def conversion_values(amount, currency):
     Принимает сумму и валюту, возвращает сумму в Руб
     """
 
-    #load_dotenv()
+    load_dotenv()
 
     api_key = os.getenv("API_KEY")
     headers = {"api_key": api_key}
