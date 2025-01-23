@@ -3,14 +3,14 @@ import requests
 from dotenv import load_dotenv
 
 
-def conversion_values(amount, currency):
+def convert_amount(amount, currency):
     """
     Принимает сумму и валюту, возвращает сумму в Руб
     """
 
     load_dotenv()
 
-    api_key = os.getenv("API_KEY")
+    api_key = os.getenv("API_uuKEY")
     headers = {"apikey": api_key}
     payload = {}
     url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={currency}&amount={amount}"

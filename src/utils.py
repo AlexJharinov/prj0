@@ -1,6 +1,8 @@
 import json
 
-from src.external_api import conversion_values
+from src.external_api import convert_amount
+
+
 
 def json_read(file_):
     """
@@ -16,7 +18,6 @@ def json_read(file_):
         return operations_list
 
 
-
 def conversion_values(transaction):
     """
     Принмает транзакцию, возвращает ее сумму
@@ -25,7 +26,7 @@ def conversion_values(transaction):
         return transaction['operationAmount']['amount']
 
     elif transaction['operationAmount']['currency']['code'] != 'RUB':
-        conv_currency = conversion_values(
+        conv_currency = convert_amount(
             transaction['operationAmount']['amount'], transaction['operationAmount']['currency']['code']
         )
 
