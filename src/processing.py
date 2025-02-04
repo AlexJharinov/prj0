@@ -6,7 +6,7 @@ def filter_by_state(data: list[dict[str, Any]], state: str = "EXECUTED") -> list
 
     list_sort = []
     for i in data:
-        if i["state"] == state:
+        if i.get('state') == state:
             list_sort.append(i)
     return list_sort
 
